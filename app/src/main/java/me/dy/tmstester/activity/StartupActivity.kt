@@ -1,4 +1,4 @@
-package me.dy.tmstester
+package me.dy.tmstester.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -9,6 +9,7 @@ import com.tms.sdk.api.request.Login
 import com.tms.sdk.api.request.SetConfig
 import com.tms.sdk.common.util.TMSUtil
 import kotlinx.android.synthetic.main.activity_startup.*
+import me.dy.tmstester.R
 
 class StartupActivity : AppCompatActivity() {
 

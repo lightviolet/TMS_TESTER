@@ -2,6 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.dy.tmstester">
 
+    <!-- push -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- push -->
+
+    <!-- network -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- network -->
+
+    <!-- storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- storage -->
+
+    <!-- state -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- state -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +30,79 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="me.dy.tmstester.StartupActivity">
+
+        <receiver
+            android:name="com.tms.sdk.push.PushReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.fcm.intent.RECEIVE" />
+                <action android:name="org.mosquitto.android.mqtt.MSGRECVD" />
+
+                <category android:name="me.dy.tmstester" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.tms.sdk.push.GetFCMInstanceID"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.tms.sdk.push.FCMPushService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- tms push popup activity -->
+        <activity
+            android:name="com.tms.sdk.push.PushPopupActivity"
+            android:theme="@style/push_popup_theme"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation" />
+
+        <!-- tms push clickNotiReceiver -->
+        <receiver android:name="me.dy.tmstester.receiver.CustomNotiReceiver" >
+            <intent-filter>
+                <action android:name="me.dy.tmstester.push.notification" />
+            </intent-filter>
+        </receiver>
+
+        <!-- TMS Private RestartReceiver -->
+        <receiver android:name="com.tms.sdk.push.mqtt.RestartReceiver">
+            <intent-filter>
+                <action android:name="ACTION_MQTT_PING" />
+                <action android:name="MQTT.FORCE_START"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_PACKAGE_RESTARTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- TMS Private connectionChangeReceiver -->
+        <receiver android:name="com.tms.sdk.push.mqtt.ConnectionChangeReceiver" android:label="NetworkConnection">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Private PUSH Service -->
+        <service
+            android:name="com.tms.sdk.push.mqtt.MQTTService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="PushService"
+            android:process="com.tms.sdk.HumusonpushService" />
+
+        <activity android:name="me.dy.tmstester.activity.StartupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

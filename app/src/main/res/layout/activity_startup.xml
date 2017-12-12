@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="me.dy.tmstester.StartupActivity">
+    tools:context="me.dy.tmstester.activity.StartupActivity">
 
     <TextView
         android:id="@+id/label_api_url"
