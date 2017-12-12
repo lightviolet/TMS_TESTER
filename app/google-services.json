@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "605141068796",
+    "firebase_url": "https://tms-tester.firebaseio.com",
+    "project_id": "tms-tester",
+    "storage_bucket": "tms-tester.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605141068796:android:58012403f9e79015",
+        "android_client_info": {
+          "package_name": "me.dy.tmstester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605141068796-3366bb203i45pho6qv6ec8je37tck16c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABZNSsVGZEH2cbm-dGCWu6kxiRF2Rs_a0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

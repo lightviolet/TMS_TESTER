@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="me.dy.tmstester.StartupActivity">
+
+    <TextView
+        android:id="@+id/label_api_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="MSG-API URL"/>
+
+    <TextView
+        android:id="@+id/tv_api_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Empty)"/>
+
+    <TextView
+        android:id="@+id/label_project_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Project Number"/>
+
+    <TextView
+        android:id="@+id/tv_project_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Empty)"/>
+
+    <TextView
+        android:id="@+id/label_push_token"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Push Token"/>
+
+    <TextView
+        android:id="@+id/tv_push_token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Empty)"/>
+
+    <TextView
+        android:id="@+id/label_status"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Status"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ready"/>
+
+    <TextView
+        android:id="@+id/label_device_cert"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="deviceCert"/>
+
+    <TextView
+        android:id="@+id/tv_device_cert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ready"/>
+
+    <TextView
+        android:id="@+id/label_login"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="login"/>
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ready"/>
+
+    <TextView
+        android:id="@+id/label_set_config"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="setConfig(Noti/Mkt->Y)"/>
+
+    <TextView
+        android:id="@+id/tv_set_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ready"/>
+
+</LinearLayout>
